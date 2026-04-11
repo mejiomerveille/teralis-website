@@ -101,7 +101,7 @@ const ContactSection = () => {
               />
               <button
                 type="submit"
-                className="w-full py-4 rounded-2xl bg-teralis-accent text-primary-foreground font-semibold text-lg flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-teralis-accent/30 transition-all duration-300 hover:scale-[1.02]"
+                className="w-full py-4 rounded-lg bg-teralis-accent text-primary-foreground font-semibold text-lg inline-flex items-center justify-center gap-3 hover:shadow-lg hover:shadow-teralis-accent/30 transition-all duration-300 hover:scale-[1.02]"
               >
                 <Send className="w-5 h-5" />
                 Envoyer ma demande

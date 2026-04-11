@@ -66,7 +66,7 @@ const ArticulationsSection = () => (
             ))}
           </div>
 
-          <a href="#contact" className="btn-primary inline-block animate-pulse-glow">
+          <a href="#contact" className="btn-primary">
             Voir la fiche technique complète
           </a>
         </motion.div>

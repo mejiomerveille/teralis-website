@@ -8,7 +8,6 @@ const navLinks = [
   { label: "Produits", href: "#produits" },
   { label: "Partenaires", href: "#b2b" },
   { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -44,7 +43,7 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 ${
+              className={`text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200 ${
                 scrolled
                   ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -55,7 +54,11 @@ const Navbar = () => {
           ))}
           <a
             href="#contact"
-            className="ml-4 px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:shadow-md hover:shadow-primary/20 transition-all duration-300 hover:scale-105"
+            className={`ml-4 px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:scale-105 ${
+              scrolled
+                ? "bg-foreground text-background hover:bg-foreground/90"
+                : "bg-white text-foreground hover:bg-white/90"
+            }`}
           >
             Contact
           </a>
