@@ -11,8 +11,8 @@ const benefits = [
 const timeline = [
   { icon: FlaskConical, title: "R&D à Paris", desc: "Formulation avec des experts internationaux." },
   { icon: Factory, title: "Production en UE", desc: "Fabrication sous contrôle qualité strict en Europe." },
-  { icon: ShieldCheck, title: "Certification", desc: "Chaque lot est analysé avant sa libération." },
-  { icon: Truck, title: "Distribution", desc: "Partenaires fiables garantissant la traçabilité." },
+  { icon: ShieldCheck, title: "Certification", desc: "Chaque lot est analysé avant sa libération pour le marché camerounais." },
+  { icon: Truck, title: "Distribution", desc: "Nos partenaires fiables garantissent la traçabilité de nos produits." },
 ];
 
 const B2BSection = () => (

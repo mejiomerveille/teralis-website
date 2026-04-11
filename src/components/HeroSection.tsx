@@ -92,10 +92,10 @@ const HeroSection = () => {
               transition={{ delay: 0.6 }}
             >
               <a href="#produits" className="btn-primary">
-                Découvrir nos solutions
+                🔵 Découvrir nos solutions
               </a>
               <a href="#contact" className="btn-secondary border-white/30 text-white hover:bg-white/10">
-                Devenir partenaire
+                🟢 Devenir pharmacien  partenaire
               </a>
             </motion.div>
           </div>

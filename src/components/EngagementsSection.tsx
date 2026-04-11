@@ -23,7 +23,7 @@ const engagements = [
   {
     icon: Pill,
     title: "Posologie optimale",
-    desc: 'Des comprimés "High Density" pour réduire le nombre de prises quotidiennes.',
+    desc: 'Des comprimés "High Density" pour réduire le nombre de prises quotidiennes sans sacrifier le dosage.',
     image: engagement3,
   },
   {
