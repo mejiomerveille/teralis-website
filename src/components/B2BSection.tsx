@@ -16,17 +16,13 @@ const timeline = [
 ];
 
 const B2BSection = () => (
-  <section id="b2b" className="relative overflow-hidden">
+  <section id="b2b" className="relative overflow-hidden bg-background">
     {/* Top skewed edge */}
-    <div className="absolute top-0 left-0 right-0 h-20 bg-background z-10"
-      style={{ clipPath: "polygon(0 0, 100% 0, 100% 30%, 0 100%)" }}
+    <div className="absolute top-0 left-0 right-0 h-48 bg-background z-10"
+      style={{ clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 100%)" }}
     />
 
-    <div className="bg-muted/30 pt-28 pb-28 relative">
-      {/* Bottom skewed edge */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-background z-10"
-        style={{ clipPath: "polygon(0 70%, 100% 0, 100% 100%, 0 100%)" }}
-      />
+    <div className="bg-muted/30 pt-52 pb-20 relative">
 
       <div className="container mx-auto relative z-[5]">
         {/* B2B benefits */}
@@ -70,7 +66,7 @@ const B2BSection = () => (
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="rounded-2xl shadow-xl shadow-primary/10 w-full max-h-[300px] object-cover"
+            className="rounded-2xl shadow-xl shadow-primary/10 w-full max-h-[420px] object-cover"
             loading="lazy"
           />
         </div>

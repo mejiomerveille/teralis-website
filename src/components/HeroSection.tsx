@@ -71,7 +71,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              L'excellence européenne au service de votre{" "}
+              Les produits de qualité européenne, pour votre{" "}
               <span className="gradient-text">santé</span>
             </motion.h1>
 
@@ -81,7 +81,8 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Teralis est une marque de santé haute performance, pensée pour les familles africaines.
+              Teralis est une marque de santé haute performance, 
+              Fabriqués selon les standards Européenne les plus stricts,  Teralis répond aux besoins spécifiques des familles africaines.
             </motion.p>
 
             <motion.div
