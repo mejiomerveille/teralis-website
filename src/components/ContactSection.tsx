@@ -2,17 +2,19 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useRef } from "react";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nom: "", profession: "", ville: "", message: "" });
   const sectionRef = useRef<HTMLElement>(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "start 0.3"],
   });
 
-  const containerWidth = useTransform(scrollYProgress, [0, 1], ["100%", "90%"]);
-  const borderRadius = useTransform(scrollYProgress, [0, 1], ["0px", "32px"]);
+  const containerWidth = useTransform(scrollYProgress, [0, 1], ["100%", isMobile ? "100%" : "90%"]);
+  const borderRadius = useTransform(scrollYProgress, [0, 1], ["0px", isMobile ? "0px" : "32px"]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +33,7 @@ const ContactSection = () => {
         className="relative overflow-hidden"
       >
         <div
-          className="relative px-4 md:px-8 py-20 md:py-28"
+          className="relative px-3 md:px-8 py-20 md:py-28"
           style={{ background: "var(--gradient-dark)" }}
         >
           {/* Background decorations */}
@@ -59,7 +61,7 @@ const ContactSection = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
               onSubmit={handleSubmit}
-              className="bg-primary-foreground/5 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-primary-foreground/10 space-y-4"
+              className="bg-primary-foreground/5 backdrop-blur-xl rounded-xl md:rounded-3xl p-5 md:p-10 border border-primary-foreground/10 space-y-4 mx-0"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input

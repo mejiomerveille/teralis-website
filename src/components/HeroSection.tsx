@@ -46,7 +46,7 @@ const HeroSection = () => {
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/45" />
+          <div className="absolute inset-0 bg-black/60" />
         </motion.div>
       ))}
 
@@ -110,10 +110,10 @@ const HeroSection = () => {
             <img
               src={futureProducts}
               alt="Futurs produits Teralis – Vitalité, Digestion, Immunité"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[58%] w-[500px] md:w-[600px] lg:w-[500px] opacity-50 blur-[1.5px] scale-125"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[58%] w-[500px] md:w-[600px] lg:w-[600px] opacity-50 blur-[1.5px] scale-125"
               loading="lazy"
-              width={800}
-              height={500}
+              width={1200}
+              height={600}
             />
             {/* Main box */}
             <motion.img

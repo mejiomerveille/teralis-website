@@ -32,10 +32,10 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4">
+      <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <a href="#hero" className="text-2xl font-heading font-bold">
-          <span className="text-primary">Tera</span>
-          <span className="text-foreground">lis</span>
+          <span className={scrolled ? "text-primary" : "text-white"}>Tera</span>
+          <span className={scrolled ? "text-foreground" : "text-white"}>lis</span>
         </a>
 
         {/* Desktop */}
@@ -44,7 +44,11 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary px-4 py-2 rounded-full hover:bg-primary/5 transition-all duration-200"
+              className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 ${
+                scrolled
+                  ? "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              }`}
             >
               {l.label}
             </a>
@@ -58,7 +62,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button
+          className={`md:hidden ${scrolled ? "text-foreground" : "text-white"}`}
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -72,7 +79,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/30"
           >
-            <div className="container mx-auto py-4 flex flex-col gap-2">
+            <div className="container mx-auto py-4 px-4 flex flex-col gap-2">
               {navLinks.map((l) => (
                 <a
                   key={l.href}
