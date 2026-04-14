@@ -4,14 +4,52 @@ import heroBg1 from "@/assets/hero-bg-1.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
 import heroBg3 from "@/assets/hero-bg-3.jpg";
 import heroBg4 from "@/assets/hero-bg-4.jpg";
-import teralisBox from "@/assets/teralis-box-articulations.png";
-import futureProducts from "@/assets/teralis-future-products.png";
 
 const slides = [
-  { image: heroBg1 },
-  { image: heroBg2 },
-  { image: heroBg3 },
-  { image: heroBg4 },
+  {
+    image: heroBg1,
+    title: (
+      <>
+        Les produits de qualité européenne, pour votre{" "}
+        <span className="gradient-text">santé</span>
+      </>
+    ),
+    subtitle:
+      "Teralis est une marque de santé haute performance. Fabriqués selon les standards européens les plus stricts, Teralis répond aux besoins spécifiques des familles africaines.",
+  },
+  {
+    image: heroBg2,
+    title: (
+      <>
+        Soulagez efficacement vos{" "}
+        <span className="gradient-text">douleurs articulaires</span>
+      </>
+    ),
+    subtitle:
+      "Retrouvez confort, mobilité et sérénité grâce à une solution adaptée à vos besoins quotidiens.",
+  },
+  {
+    image: heroBg3,
+    title: (
+      <>
+        Améliorez vos{" "}
+        <span className="gradient-text">performances</span> sans douleur
+      </>
+    ),
+    subtitle:
+      "Protégez vos articulations et restez actif plus longtemps, même lors d'efforts intenses.",
+  },
+  {
+    image: heroBg4,
+    title: (
+      <>
+        Retrouvez le plaisir de{" "}
+        <span className="gradient-text">bouger librement</span>
+      </>
+    ),
+    subtitle:
+      "Profitez chaque jour d'une meilleure mobilité et d'un bien-être durable sans contraintes.",
+  },
 ];
 
 const HeroSection = () => {
@@ -29,9 +67,9 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[70vh] flex items-center overflow-hidden bg-background"
+      className="relative min-h-[85vh] md:min-h-[85vh] flex items-center overflow-hidden bg-foreground"
     >
-      {/* Background carousel – two layers for crossfade (no white flash) */}
+      {/* Background carousel */}
       {slides.map((slide, i) => (
         <motion.div
           key={i}
@@ -46,86 +84,64 @@ const HeroSection = () => {
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/80" />
         </motion.div>
       ))}
 
-      {/* Split content */}
-      <div className="container mx-auto px-4 pt-20 pb-16 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left: Text */}
-          <div className="flex-1 max-w-xl">
-            <motion.span
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Santé & Bien-être
-            </motion.span>
-
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              Les produits de qualité européenne, pour votre{" "}
-              <span className="gradient-text">santé</span>
-            </motion.h1>
-
-            <motion.p
-              className="text-base md:text-lg text-white/80 max-w-lg mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Teralis est une marque de santé haute performance, 
-              Fabriqués selon les standards Européenne les plus stricts,  Teralis répond aux besoins spécifiques des familles africaines.
-            </motion.p>
-
-            <motion.div
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <a href="#produits" className="btn-primary">
-                🔵 Découvrir nos solutions
-              </a>
-              <a href="#contact" className="btn-secondary border-white/30 text-white hover:bg-white/10">
-                🟢 Devenir pharmacien  partenaire
-              </a>
-            </motion.div>
-          </div>
-
-          {/* Right: Product visual – real box + blurred future products */}
-          <motion.div
-            className="flex-1 flex justify-center lg:justify-end relative"
-            initial={{ opacity: 0, x: 60, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
+      {/* Centered content */}
+      <div className="container mx-auto px-5 md:px-8 pt-24 pb-20 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.span
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white/10 border border-white/20 text-white text-sm font-medium mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
           >
-            {/* Future products behind (blurred) */}
-            <img
-              src={futureProducts}
-              alt="Futurs produits Teralis – Vitalité, Digestion, Immunité"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[58%] w-[500px] md:w-[600px] lg:w-[600px] opacity-50 blur-[1.5px] scale-125"
-              loading="lazy"
-              width={1200}
-              height={600}
-            />
-            {/* Main box */}
-            <motion.img
-              src={teralisBox}
-              alt="Teralis Articulations"
-              className="relative z-10 w-[250px] md:w-[320px] lg:w-[380px] drop-shadow-2xl"
-              width={500}
-              height={600}
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            />
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            Santé & Bien-être
+          </motion.span>
+
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={`title-${current}`}
+              className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              {slides[current].title}
+            </motion.h1>
+          </AnimatePresence>
+
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={`sub-${current}`}
+              className="text-base md:text-lg text-white/80 max-w-2xl mx-auto mb-10"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+            >
+              {slides[current].subtitle}
+            </motion.p>
+          </AnimatePresence>
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <a href="#produits" className="btn-primary">
+              Découvrir nos solutions
+            </a>
+            <a
+              href="#contact"
+              className="btn-secondary border-white/30 text-white hover:bg-white/10 hover:text-white"
+            >
+              Devenir pharmacien partenaire
+            </a>
           </motion.div>
         </div>
       </div>
@@ -138,7 +154,7 @@ const HeroSection = () => {
             onClick={() => setCurrent(i)}
             className={`h-2 rounded-full transition-all duration-500 ${
               i === current
-                ? "w-8 bg-primary"
+                ? "w-8 bg-white"
                 : "w-2 bg-white/40 hover:bg-white/60"
             }`}
           />

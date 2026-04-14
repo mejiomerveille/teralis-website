@@ -20,13 +20,13 @@ const ArticulationsSection = () => (
             alt="Teralis Articulations"
             className="w-full max-w-md mx-auto rounded-2xl shadow-2xl shadow-primary/15"
           />
-          <motion.div
+          {/* <motion.div
             className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-heading font-semibold shadow-lg"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             1 comprimé/jour
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Content */}

@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Shield, Factory, Pill, HeartPulse } from "lucide-react";
+import { Shield, Factory, Pill } from "lucide-react";
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import engagement1 from "@/assets/engagement-1.jpg";
 import engagement2 from "@/assets/engagement-2.jpg";
 import engagement3 from "@/assets/engagement-3.jpg";
-import engagement4 from "@/assets/engagement-4.jpg";
 
 const engagements = [
   {
@@ -26,12 +25,6 @@ const engagements = [
     desc: 'Des comprimés "High Density" pour réduire le nombre de prises quotidiennes sans sacrifier le dosage.',
     image: engagement3,
   },
-  {
-    icon: HeartPulse,
-    title: "Santé accessible",
-    desc: "Des solutions premium adaptées aux besoins des familles africaines.",
-    image: engagement4,
-  },
 ];
 
 const EngagementsSection = () => {
@@ -40,8 +33,8 @@ const EngagementsSection = () => {
 
   return (
     <section id="engagements" className="section-padding bg-card">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16">
+      <div className="container mx-auto px-5 md:px-8">
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
           {/* Left side - title */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -53,15 +46,19 @@ const EngagementsSection = () => {
               Nos engagements
             </h2>
             <div className="w-20 h-1 bg-primary rounded-full mb-6" />
-            <p className="text-muted-foreground">
-              Chaque produit Teralis reflète notre engagement envers la qualité, l'innovation et l'accessibilité.
+            <p className="text-muted-foreground mb-8">
+              Chaque produit Teralis reflète notre engagement envers la qualité,
+              l'innovation et l'accessibilité.
             </p>
+            <a href="#contact" className="btn-primary">
+              Devenir pharmacien partenaire
+            </a>
           </motion.div>
 
           {/* Right side */}
           {isMobile ? (
-            /* Mobile: vertical list */
-            <div className="w-full flex flex-col gap-4">
+            /* Mobile: vertical list with padding */
+            <div className="w-full flex flex-col gap-4 px-2">
               {engagements.map((e, i) => (
                 <motion.div
                   key={e.title}
@@ -69,7 +66,7 @@ const EngagementsSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="relative rounded-2xl overflow-hidden h-48"
+                  className="relative rounded-2xl overflow-hidden h-44"
                 >
                   <img
                     src={e.image}
@@ -119,17 +116,18 @@ const EngagementsSection = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                     <div className="relative z-10 h-full flex flex-col justify-end p-6">
-                      <motion.div
-                        animate={{ opacity: isActive ? 1 : 0.7 }}
-                        className="flex items-center gap-3 mb-2"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-10 h-10 rounded-xl bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center shrink-0">
                           <e.icon className="w-5 h-5 text-primary-foreground" />
                         </div>
-                        <h3 className="text-lg font-heading font-semibold text-primary-foreground whitespace-nowrap">
+                        <motion.h3
+                          animate={{ opacity: isActive ? 1 : 0, width: isActive ? "auto" : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="text-lg font-heading font-semibold text-primary-foreground whitespace-nowrap overflow-hidden"
+                        >
                           {e.title}
-                        </h3>
-                      </motion.div>
+                        </motion.h3>
+                      </div>
                       <motion.p
                         animate={{
                           opacity: isActive ? 1 : 0,

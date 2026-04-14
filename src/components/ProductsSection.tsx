@@ -10,18 +10,13 @@ const products = [
 
 const ProductsSection = () => (
   <section id="produits" className="section-padding bg-muted/30">
-    <div className="container mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
+    <div className="container mx-auto px-5 md:px-8">
+      <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-4">
           Nos Solutions de Santé
         </h2>
         <div className="w-20 h-1 bg-teralis-accent mx-auto rounded-full" />
-      </motion.div>
+      </div>
 
       <div className="max-w-4xl mx-auto">
         <div className="hidden md:grid grid-cols-3 gap-4 mb-4 px-6 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
@@ -32,10 +27,10 @@ const ProductsSection = () => (
         {products.map((p, i) => (
           <motion.div
             key={p.name}
-            initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
+            transition={{ delay: i * 0.08, duration: 0.4 }}
             className={`grid grid-cols-1 md:grid-cols-3 gap-4 p-6 rounded-xl mb-3 border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 ${
               p.available ? "bg-card border-primary/20" : "bg-card border-border/50"
             }`}

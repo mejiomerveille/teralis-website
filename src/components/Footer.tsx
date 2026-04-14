@@ -1,10 +1,7 @@
 const Footer = () => (
-  <footer className="bg-foreground py-12 px-4">
+  <footer className="bg-foreground py-20 md:py-28 px-4">
     <div className="container mx-auto text-center">
       <span className="text-2xl font-heading font-bold text-primary-foreground">Teralis</span>
-      <p className="text-primary-foreground/50 text-sm mt-2">
-        par Laboratoire Glentera
-      </p>
       <div className="flex justify-center gap-6 mt-6 text-sm text-primary-foreground/40">
         <a href="#hero" className="hover:text-primary-foreground/70 transition-colors">Accueil</a>
         <a href="#produits" className="hover:text-primary-foreground/70 transition-colors">Produits</a>
