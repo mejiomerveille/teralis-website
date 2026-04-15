@@ -8,6 +8,7 @@ import heroBg4 from "@/assets/hero-bg-4.jpg";
 const slides = [
   {
     image: heroBg1,
+    position: 'center',
     title: (
       <>
         Les produits de qualité européenne, pour votre{" "}
@@ -19,6 +20,7 @@ const slides = [
   },
   {
     image: heroBg2,
+    position: 'right',
     title: (
       <>
         Soulagez efficacement vos{" "}
@@ -30,6 +32,7 @@ const slides = [
   },
   {
     image: heroBg3,
+    position: 'right',
     title: (
       <>
         Améliorez vos{" "}
@@ -41,6 +44,7 @@ const slides = [
   },
   {
     image: heroBg4,
+    position: 'center',
     title: (
       <>
         Retrouvez le plaisir de{" "}
@@ -82,9 +86,10 @@ const HeroSection = () => {
           <img
             src={slide.image}
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full"
+            style={{ objectPosition: slide.position || 'center' }}
           />
-          <div className="absolute inset-0 bg-black/80" />
+          <div className="absolute inset-0 bg-black/60" />
         </motion.div>
       ))}
 

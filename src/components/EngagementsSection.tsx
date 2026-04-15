@@ -35,26 +35,63 @@ const EngagementsSection = () => {
     <section id="engagements" className="section-padding bg-card">
       <div className="container mx-auto px-5 md:px-8">
         <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
-          {/* Left side - title */}
+         {/* Left side - title */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:w-1/3 lg:sticky lg:top-32"
+            className="lg:w-1/3 lg:sticky lg:top-32 space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              Nos engagements
-            </h2>
-            <div className="w-20 h-1 bg-primary rounded-full mb-6" />
-            <p className="text-muted-foreground mb-8">
-              Chaque produit Teralis reflète notre engagement envers la qualité,
-              l'innovation et l'accessibilité.
-            </p>
-            <a href="#contact" className="btn-primary">
-              Devenir pharmacien partenaire
-            </a>
-          </motion.div>
 
+            {/* Title */}
+            <div>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-3">
+                Nos engagements
+              </h2>
+              <div className="w-20 h-1 bg-primary rounded-full" />
+            </div>
+
+            {/* Description */}
+            <p className="text-muted-foreground leading-relaxed">
+              Chaque produit Teralis reflète notre engagement envers la qualité,
+              l’innovation et l’accessibilité, pour vous offrir des solutions de santé
+              modernes, efficaces et accessibles à tous.
+            </p>
+
+            {/* Citation */}
+            <p className="italic text-sm text-muted-foreground border-l-4 border-primary pl-4">
+              “Votre bien-être est au cœur de chacune de nos formules.”
+            </p>
+
+            {/* Badges */}
+            <div className="flex flex-wrap gap-3">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted px-3 py-2 rounded-md">
+                ✅ Normes européennes
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted px-3 py-2 rounded-md">
+                🧪 Testé & approuvé
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted px-3 py-2 rounded-md">
+                🌍 Adapté aux familles africaines
+              </div>
+            </div>
+
+            {/* Stat */}
+            {/* <div>
+              <p className="text-3xl font-bold text-primary">+10 000</p>
+              <p className="text-sm text-muted-foreground">
+                clients satisfaits à travers l’Afrique
+              </p>
+            </div> */}
+
+            {/* CTA */}
+            <div className="pt-4">
+              <a href="#contact" className="btn-primary inline-block">
+                Devenir pharmacien partenaire
+              </a>
+            </div>
+
+          </motion.div>
           {/* Right side */}
           {isMobile ? (
             /* Mobile: vertical list with padding */
@@ -71,7 +108,7 @@ const EngagementsSection = () => {
                   <img
                     src={e.image}
                     alt={e.title}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
