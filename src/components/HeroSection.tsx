@@ -12,7 +12,7 @@ const slides = [
     title: (
       <>
         Les produits de qualité européenne, pour votre{" "}
-        <span className="gradient-text">santé</span>
+        santé
       </>
     ),
     subtitle:
@@ -24,7 +24,7 @@ const slides = [
     title: (
       <>
         Soulagez efficacement vos{" "}
-        <span className="gradient-text">douleurs articulaires</span>
+        douleurs articulaires
       </>
     ),
     subtitle:
@@ -36,7 +36,7 @@ const slides = [
     title: (
       <>
         Améliorez vos{" "}
-        <span className="gradient-text">performances</span> sans douleur
+        performances sans douleur
       </>
     ),
     subtitle:
@@ -48,7 +48,7 @@ const slides = [
     title: (
       <>
         Retrouvez le plaisir de{" "}
-        <span className="gradient-text">bouger librement</span>
+        bouger librement
       </>
     ),
     subtitle:
