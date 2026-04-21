@@ -27,85 +27,179 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 md:py-28 flex justify-center bg-white">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="flex justify-center"
+      style={{ backgroundColor: "#1E50C8" }}
+    >
       <motion.div
         style={{ width: containerWidth, borderRadius }}
         className="relative overflow-hidden"
       >
-        <div
-          className="relative px-3 md:px-8 py-20 md:py-28 bg-white"
-        >
-          {/* Background decorations */}
-          <div className="absolute inset-0 opacity-5 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-blue-300 rounded-full blur-3xl" />
-          </div>
+        <div className="relative px-4 md:px-8 py-20 md:py-28" style={{ backgroundColor: "#1E50C8" }}>
 
-          <div className="container mx-auto max-w-3xl relative z-10">
+          {/* Blob décoratif haut droite */}
+          <div
+            className="absolute top-12 right-12 w-48 h-48 rounded-full pointer-events-none"
+            style={{ background: "rgba(255,255,255,0.08)" }}
+          />
+          {/* Blob décoratif bas gauche */}
+          <div
+            className="absolute bottom-10 left-10 w-36 h-36 rounded-full pointer-events-none"
+            style={{ background: "rgba(255,255,255,0.06)" }}
+          />
+
+          <div className="container mx-auto max-w-2xl relative z-10">
+
+            {/* Carte blanche */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              transition={{ duration: 0.5 }}
+              className="bg-white relative overflow-hidden"
+              style={{ borderRadius: "28px", padding: isMobile ? "2rem 1.25rem" : "2.5rem 2.5rem 2rem" }}
             >
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-blue-700 mb-4">
-                Faites le choix de l'excellence européenne.
-              </h2>
-              <p className="text-blue-500 text-lg">Rejoignez le mouvement Teralis.</p>
-            </motion.div>
+              {/* Blobs internes décoratifs */}
+              <div
+                className="absolute -top-10 -right-10 w-40 h-40 rounded-full pointer-events-none"
+                style={{ background: "#E0F7FA", opacity: 0.7 }}
+              />
+              <div
+                className="absolute -bottom-12 -left-8 w-36 h-36 rounded-full pointer-events-none"
+                style={{ background: "#FFF8E1", opacity: 0.6 }}
+              />
 
-            <motion.form
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              onSubmit={handleSubmit}
-              className="bg-blue-50 backdrop-blur-xl rounded-xl md:rounded-3xl p-5 md:p-10 border border-blue-100 space-y-4 mx-0"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Nom *"
-                  value={form.nom}
-                  onChange={(e) => setForm({ ...form, nom: e.target.value })}
-                  className="w-full px-5 py-3.5 rounded-2xl border border-blue-200 bg-white text-blue-800 placeholder:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 transition-all duration-300"
-                  maxLength={100}
-                />
-                <select
-                  value={form.profession}
-                  onChange={(e) => setForm({ ...form, profession: e.target.value })}
-                  className="w-full px-5 py-3.5 rounded-2xl border border-blue-200 bg-white text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400/50 transition-all duration-300 appearance-none"
-                >
-                  <option value="" className="text-blue-300">Profession *</option>
-                  <option value="pharmacien" className="text-blue-800">Pharmacien</option>
-                  <option value="medecin" className="text-blue-800">Médecin</option>
-                  <option value="patient" className="text-blue-800">Patient</option>
-                </select>
+              {/* Titre */}
+              <div className="relative z-10 text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                  Faites le choix de l'excellence européenne.
+                </h2>
+                <p className="text-gray-500 text-base">Rejoignez le mouvement Teralis.</p>
               </div>
-              <input
-                type="text"
-                placeholder="Ville *"
-                value={form.ville}
-                onChange={(e) => setForm({ ...form, ville: e.target.value })}
-                className="w-full px-5 py-3.5 rounded-2xl border border-blue-200 bg-white text-blue-800 placeholder:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 transition-all duration-300"
-                maxLength={100}
-              />
-              <textarea
-                placeholder="Votre message..."
-                rows={4}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-5 py-3.5 rounded-2xl border border-blue-200 bg-white text-blue-800 placeholder:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400/50 transition-all duration-300 resize-none"
-                maxLength={1000}
-              />
-              <button
-                type="submit"
-                className="w-full py-4 rounded-lg bg-blue-600 text-white font-semibold text-lg inline-flex items-center justify-center gap-3 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-300/40 transition-all duration-300 hover:scale-[1.02]"
+
+              {/* Formulaire */}
+              <motion.form
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+                onSubmit={handleSubmit}
+                className="relative z-10 space-y-4"
               >
-                <Send className="w-5 h-5" />
-                Envoyer ma demande
-              </button>
-            </motion.form>
+                {/* Nom + Profession */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex flex-col gap-1">
+                    <label className="text-sm font-medium text-gray-700">Nom *</label>
+                    <input
+                      type="text"
+                      placeholder="Votre nom"
+                      value={form.nom}
+                      onChange={(e) => setForm({ ...form, nom: e.target.value })}
+                      maxLength={100}
+                      className="w-full px-4 py-2.5 rounded-xl border text-gray-800 placeholder:text-gray-300 focus:outline-none transition-all duration-200"
+                      style={{
+                        border: "1.5px solid #E0E0E0",
+                        fontSize: "14px",
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#1E50C8";
+                        e.target.style.boxShadow = "0 0 0 3px rgba(30,80,200,0.12)";
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = "#E0E0E0";
+                        e.target.style.boxShadow = "none";
+                      }}
+                    />
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <label className="text-sm font-medium text-gray-700">Profession *</label>
+                    <select
+                      value={form.profession}
+                      onChange={(e) => setForm({ ...form, profession: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl text-gray-800 focus:outline-none transition-all duration-200 appearance-none"
+                      style={{
+                        border: "1.5px solid #E0E0E0",
+                        fontSize: "14px",
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230AAECC' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "right 14px center",
+                        paddingRight: "36px",
+                      }}
+                      onFocus={(e) => {
+                        e.target.style.borderColor = "#1E50C8";
+                        e.target.style.boxShadow = "0 0 0 3px rgba(30,80,200,0.12)";
+                      }}
+                      onBlur={(e) => {
+                        e.target.style.borderColor = "#E0E0E0";
+                        e.target.style.boxShadow = "none";
+                      }}
+                    >
+                      <option value="">Sélectionner...</option>
+                      <option value="pharmacien">Pharmacien</option>
+                      <option value="medecin">Médecin</option>
+                      <option value="patient">Patient</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Ville */}
+                <div className="flex flex-col gap-1">
+                  <label className="text-sm font-medium text-gray-700">Ville *</label>
+                  <input
+                    type="text"
+                    placeholder="Votre ville"
+                    value={form.ville}
+                    onChange={(e) => setForm({ ...form, ville: e.target.value })}
+                    maxLength={100}
+                    className="w-full px-4 py-2.5 rounded-xl text-gray-800 placeholder:text-gray-300 focus:outline-none transition-all duration-200"
+                    style={{ border: "1.5px solid #E0E0E0", fontSize: "14px" }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = "#1E50C8";
+                      e.target.style.boxShadow = "0 0 0 3px rgba(30,80,200,0.12)";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = "#E0E0E0";
+                      e.target.style.boxShadow = "none";
+                    }}
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="flex flex-col gap-1">
+                  <label className="text-sm font-medium text-gray-700">Message</label>
+                  <textarea
+                    placeholder="Votre message..."
+                    rows={3}
+                    value={form.message}
+                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    maxLength={1000}
+                    className="w-full px-4 py-2.5 rounded-xl text-gray-800 placeholder:text-gray-300 focus:outline-none transition-all duration-200 resize-none"
+                    style={{ border: "1.5px solid #E0E0E0", fontSize: "14px" }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = "#1E50C8";
+                      e.target.style.boxShadow = "0 0 0 3px rgba(30,80,200,0.12)";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = "#E0E0E0";
+                      e.target.style.boxShadow = "none";
+                    }}
+                  />
+                </div>
+
+                {/* Bouton */}
+                <button
+                  type="submit"
+                  className="w-full py-3.5 rounded-xl text-white font-semibold text-base inline-flex items-center justify-center gap-3 transition-all duration-200 hover:opacity-90 hover:scale-[1.01] active:scale-[0.98]"
+                  style={{ background: "linear-gradient(135deg, #43C85A, #2EA84A)" }}
+                >
+                  <Send className="w-4 h-4" />
+                  Envoyer ma demande →
+                </button>
+              </motion.form>
+            </motion.div>
           </div>
         </div>
       </motion.div>
