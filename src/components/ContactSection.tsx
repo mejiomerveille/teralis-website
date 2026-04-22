@@ -74,7 +74,7 @@ const ContactSection = () => {
               {/* Titre */}
               <div className="relative z-10 text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                  Faites le choix de l'excellence européenne.
+                  Faites le choix de la Qualité européenne.
                 </h2>
                 <p className="text-gray-500 text-base">Rejoignez le mouvement Teralis.</p>
               </div>
@@ -137,10 +137,10 @@ const ContactSection = () => {
                         e.target.style.boxShadow = "none";
                       }}
                     >
-                      <option value="">Sélectionner...</option>
-                      <option value="pharmacien">Pharmacien</option>
+                      <option value="">Pharmacien</option>
                       <option value="medecin">Médecin</option>
                       <option value="patient">Patient</option>
+                      <option value="autres">Autres</option>
                     </select>
                   </div>
                 </div>

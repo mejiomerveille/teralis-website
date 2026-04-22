@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, Clock } from "lucide-react";
 
 const products = [
-  { name: "Teralis Articulations", target: "Confort, Mobilité, Tendons", status: "Disponible via Laborex", available: true },
+  { name: "Teralis Articulations", target: "Confort, Mobilité, Tendons", status: "Disponible au Cameroun", available: true },
   { name: "Teralis Magnesium B6", target: "Stress, Fatigue et Crampes", status: "Lancement prévu 2027", available: false },
   { name: "Teralis Melatonine", target: "Sommeil & Sérénité", status: "Lancement prévu 2027", available: false },
   { name: "Teralis Vitamines", target: "Énergie, Appétit et Vitalité", status: "Lancement prévu 2027", available: false },

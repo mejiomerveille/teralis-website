@@ -4,14 +4,14 @@ import teralisPharmacy from "@/assets/teralis-pharmacy.jpg";
 
 const benefits = [
   { icon: Stethoscope, title: "Valeur médicale élevée", desc: "Produit de fond pour les articulations et tendons." },
-  { icon: PackageCheck, title: "Zéro rupture", desc: "Distribution sécurisée via Laborex Cameroun." },
+  { icon: PackageCheck, title: "Zéro rupture", desc: "Distribution sécurisée via des grossistes agréés." },
   { icon: FileText, title: "Support Scientifique", desc: "Fiches techniques et matériel marketing pour vos équipes." },
 ];
 
 const timeline = [
   { icon: FlaskConical, title: "R&D à Paris", desc: "Formulation avec des experts internationaux." },
   { icon: Factory, title: "Production en UE", desc: "Fabrication sous contrôle qualité strict en Europe." },
-  { icon: ShieldCheck, title: "Certification", desc: "Chaque lot est analysé avant sa libération pour le marché camerounais." },
+  { icon: ShieldCheck, title: "Certification", desc: "Chaque lot est analysé avant sa libération selon les normes européennes." },
   { icon: Truck, title: "Distribution", desc: "Nos partenaires fiables garantissent la traçabilité de nos produits." },
 ];
 

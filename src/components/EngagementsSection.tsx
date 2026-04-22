@@ -22,7 +22,7 @@ const engagements = [
   {
     icon: Pill,
     title: "Posologie optimale",
-    desc: 'Des comprimés "High Density" pour réduire le nombre de prises quotidiennes sans sacrifier le dosage.',
+    desc: 'Un comprimé par jour pour faciliter le traitement sans sacrifier le dosage.',
     image: engagement3,
   },
 ];
@@ -60,7 +60,7 @@ const EngagementsSection = () => {
 
             {/* Citation */}
             <p className="italic text-sm text-muted-foreground border-l-4 border-primary pl-4">
-              “Votre bien-être est au cœur de chacune de nos formules.”
+              “Votre santé est au cœur de chacune de nos formules.”
             </p>
 
             {/* Badges */}
@@ -85,11 +85,11 @@ const EngagementsSection = () => {
             </div> */}
 
             {/* CTA */}
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <a href="#contact" className="btn-primary inline-block">
                 Devenir pharmacien partenaire
               </a>
-            </div>
+            </div> */}
 
           </motion.div>
           {/* Right side */}
@@ -108,10 +108,10 @@ const EngagementsSection = () => {
                   <img
                     src={e.image}
                     alt={e.title}
-                    className="absolute inset-0 w-full h-full"
+                    className="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent" />
                   <div className="relative z-10 h-full flex flex-col justify-end p-5">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">

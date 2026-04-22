@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <a href="#hero" className="text-2xl font-heading font-bold">
-          <span className={scrolled ? "text-primary" : "text-white"}>Teralis</span>
+          <span className={scrolled ? "text-primary" : "text-white"}>Teralis ®</span>
           {/* <span className={scrolled ? "text-foreground" : "text-white"}>lis</span> */}
         </a>
 
